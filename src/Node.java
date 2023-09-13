@@ -44,7 +44,7 @@ public class Node<T> {
         this.nextNum = nextNum;
     }
 
-    public void setPrevNum(Node<T> prevNum) {
+    public void setNumPrev(Node<T> prevNum) {
         this.prevNum = prevNum;
     }
 }

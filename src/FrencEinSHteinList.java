@@ -1,78 +1,79 @@
 import javax.print.attribute.standard.NumberUp;
 
 abstract class FrencEinShtein<T> {
-    abstract public void Insert(Node<T> node);//stanuma node@ stugum listi size@ yev kanchum hamapatasxan funkcayaner@
+    abstract public void Insert(Node<T> node);//this function insert element to list
 
-    abstract protected void InsertHelperForSorted(Node<T> node);//ays  funkcyan kanchvuma inserti mejic yev katarum cucichneri katarum hamematum nodi valun yev listi ameamec yev amenapqr
-    //valueov arjeqi elementneri het yev kanchum hamapatasxan funckyan
+    abstract protected void InsertHelperForSorted(Node<T> node); // This fuunction is helper for Insert funnction and this function setting pointer for node value
 
-    abstract protected void InsertStart(Node<T> node); // avelcnum e elemnet@ erb size@ havasar = 0
+    abstract protected void InsertStart(Node<T> node); // This function Insert element where list size = 0; and this function called in Insert fauntiom
 
-    abstract protected void InsertMinNum(Node<T> node);// avelacnum e ayn depqum erb avlecnox nodi arjeq@ poqr e listi amenapoqr valueov Nodic
+    abstract protected void InsertMinNum(Node<T> node);//This function for sorted  list , and this function add element sorted list in start,this fucntion will be called,when node value is low list low value
 
-    abstract protected void InsertMaxNum(Node<T> node);// avelacnum e ayn depqum erb avlecnox nodi arjeq@ mec e listi amenamec valueov Nodic
+    abstract protected void InsertMaxNum(Node<T> node);// This function for sorted list ,and this function add element sorted list in end,this function will be called when node value is great list great value
 
-    abstract protected void InsertTruePosition(Node<T> node);//avelacnum e ayn depqum yerb nodi valuen  ir arjeqov gtnvum e maxNodei valuei yev minNodi value mijakayqum
+    abstract protected void InsertTruePosition(Node<T> node);//This function for sorted list ,this function will be called when  node value great  list low element  and low list great element
 
-    abstract protected void InsertHelperDoubleLinkedList(Node<T> node);// avlacnum e vorpes doubleLiknked list
+    abstract protected void InsertHelperDoubleLinkedList(Node<T> node);// Insert logition for doubleLinkedlist
 
-    abstract public void Print(boolean quue);//tpum e double linked list@ chisht hertakanutyamb yete  quue=true,hakarak depqum tpum e doubleLinked list@ hakarak hertakanutyamb
+    abstract public void Print(boolean quue);//If   quue =true ,print doubleLinkedlist ,when quue = false,print reverse list
 
-    abstract public void PrintSort(boolean sort);//yete sort = true apa tpume poqric mec ,falsei depqum mecic poqr
+    abstract public void PrintSort(boolean sort);// If sort = true print SortedList,else print sortReverselist
 
-    abstract public void Insert(int index, Node<T> node);//avelacnum a doubleListumIndexov
+    abstract public void Insert(int index, Node<T> node);//This is function add node in index
 
-    abstract public FrencEinSHteinList<T> Copy(FrencEinSHteinList<T> list);// parametr tvac list@ veragruma mer listin  yev veradarcnume c++i = operaotr@
+    abstract public FrencEinSHteinList<T> Copy(FrencEinSHteinList<T> list);// This function this = list, operator c++ (=)
 
-    abstract public boolean Erase(int index, int count);//jnjuma trvac indexic sksac yev trvac qanakov
+    abstract public boolean Erase(int index, int count);//Remove element   from  index   to index + count
 
-    abstract public Node<T> Front(); // veradarcnuma head@
+    abstract public Node<T> Front(); // Return head
 
-    abstract public Node<T> Back();//veradarcnuma tail@
+    abstract public Node<T> Back();//Return tail
+    abstract public void PushBack(Node<T> node);//Insert node in back DoubleLInkedlist
 
-    abstract public void PushBack(Node<T> node);//avelacnuma verjic
+    abstract public void PushFront(Node<T> node);// Insert node in start oubleLInkedlist
 
-    abstract public void PushFront(Node<T> node);// avelacnuma skzbic
+    abstract public void EmplaceFront(int count);// Insert  in start, Count pieces Node in deafult value
 
-    abstract public void EmplaceFront(int count);// avelacni skzbic   nshvac chapov deafult valyuov
+    abstract public void PopBack();//Remov element in back DoubleLinkedList(head)
 
-    abstract public void PopBack();//jnjuma elment verjic
+    abstract public void PopFront(); // Remove element in start DoubleLinkedList(tail)
 
-    abstract public void PopFront(); // jnjuma element skzbic
+    abstract public void ReSize(int count);// Insert  in back, Count pieces Node in deafult value
 
-    abstract public void ReSize(int count);//sarquma trvac qanakov element yev avelcnum verjic
+    abstract public void Merge(FrencEinSHteinList<T> list2);// This insert foreach element List2
 
-    abstract public void Merge(FrencEinSHteinList<T> list2);// list@ kpcnuma irar
+    abstract public void Swap(FrencEinSHteinList<T> list1, FrencEinSHteinList<T> list2);// Swap list1 and list 2
 
-    abstract public void Swap(FrencEinSHteinList<T> list1, FrencEinSHteinList<T> list2);//erkus lister@ poxuma  texerov;
+    abstract public void Reverse();//Reverse DoubleLinkedList
 
-    abstract public void Reverse();//double linked listi dirqer@ poxuma
+    abstract public void Unique();// Remove Duplicate element
 
-    abstract public void Unique();// krknvox elementneric toxuma mek hat
+    abstract public void Sort();//Sorted list
 
-    abstract public void Sort();//sortavoruma DoublLinked list@
+    abstract public void Remove(int index);// Remove element in given index;
 
-    abstract public void Remove(int index);// jnjuma nod@ indexi ;
+    abstract public void Remove(Node<T> node);//Remov elemetn in given node.value
 
-    abstract public void Remove(Node<T> node);//jnjuma trvac nodi hamapatasxanox valun
+    abstract public void Clear(); //Clear List
+    // ==,>,>=,<,<= operators Function  is chek foreach element value in list
 
-    abstract public void Clear(); //jnjel cucak@;
+    abstract public boolean IsEqual(FrencEinSHteinList<T> list);// Chek to This. is equal          c++(==)
 
-    abstract public boolean IsEqual(FrencEinSHteinList<T> list);// stuguma erkus lister@ havasaren te che  == C++i
+    abstract public boolean IsNotEqual(FrencEinSHteinList<T> list);// Chek to This. is not equal list
 
-    abstract public boolean IsNotEqual(FrencEinSHteinList<T> list);//stuguma erkus lister@  havasar chen
+    abstract public boolean IsGreatOrNO(FrencEinSHteinList<T> list);//Chek This forEach element value  great list forEache elemennt value
 
-    abstract public boolean IsGreatOrNO(FrencEinSHteinList<T> list);//hertov elementner@ stuguma  > c++
+    abstract public boolean IsGreatOrEqual(FrencEinSHteinList<T> list); //Chek This forEach element value  great or equal list forEache elemennt value
 
-    abstract public boolean IsGreatOrEqual(FrencEinSHteinList<T> list); // hertov elementner@ stugum >= c++
+    abstract public boolean IsLowOrNo(FrencEinSHteinList<T> list); // //Chek This forEach element value  low list forEache elemennt value
 
-    abstract public boolean IsLowOrNo(FrencEinSHteinList<T> list); // hertov elementner@ stugum < c++
+    abstract public boolean IsLowOrEqual(FrencEinSHteinList<T> list); ////Chek This forEach element value  low or equal list forEache elemennt value
 
-    abstract public boolean IsLowOrEqual(FrencEinSHteinList<T> list); // hertov elementner@ stugum <= c++
+    abstract protected void RemoveInSorte(T value);//Remove  value in Sorted List and setting pointers
 
-    abstract public int Size();//listi chap@
+    abstract public int Size();//List size
 
-    abstract public boolean Empty();// veradarcnum list@ datarke te che
+    abstract public boolean Empty();// List is empty ?
 
 }
 
@@ -87,38 +88,41 @@ public class FrencEinSHteinList<T> extends FrencEinShtein<T> {
     public FrencEinSHteinList() {
     }
 
-    public void Insert(Node<T> node) {
+    @Override
+    public void Insert(Node<T> node) {  //  can not Insert  null node
         if (node == null) {
             throw new RuntimeException();
         } else if (size == 0) {
             InsertStart(node);
         } else {
-            InsertHelperDoubleLinkedList(node);
-            InsertHelperForSorted(node);
+            InsertHelperDoubleLinkedList(node);// Insert node with DoubleLinkedLIst
+            InsertHelperForSorted(node);//Insert node with Sorted List
             size++;
         }
 
     }
 
+    @Override
     protected void InsertHelperForSorted(Node<T> node) {
         if (node.getValue() instanceof Number) {
             Double resultCompearMax;
             Double resultCompearMin;
-            resultCompearMin = ((Number) node.getValue()).doubleValue() - ((Number) minNum.getValue()).doubleValue();
-            resultCompearMax = ((Number) node.getValue()).doubleValue() - ((Number) maxNum.getValue()).doubleValue();
+            resultCompearMin = ((Number) node.getValue()).doubleValue() - ((Number) minNum.getValue()).doubleValue(); // Compear node value and low element for list
+            resultCompearMax = ((Number) node.getValue()).doubleValue() - ((Number) maxNum.getValue()).doubleValue();// Compear node valuue and Great element for list
             if (resultCompearMax >= 0) {
-                InsertMaxNum(node);//avelacnum a maxNodi verjic
+                InsertMaxNum(node);//Insert end in Sorted list
             } else if (resultCompearMin <= 0) {
-                InsertMinNum(node);// avelacnum a minNodi skzbic
+                InsertMinNum(node);// Insert start in Soted list
             } else {
-                InsertTruePosition(node);
+                InsertTruePosition(node);// Insert  node in [min - max] position
             }
         } else {
-            System.out.println("esim inch");
+            System.out.println("I dont know"); // this List  with Number value
         }
     }
 
-    protected void InsertStart(Node<T> node) {
+    @Override
+    protected void InsertStart(Node<T> node) {//Insert start for DoubleLinked list and Sorted list
         head = node;
         maxNum = node;
         minNum = node;
@@ -126,23 +130,24 @@ public class FrencEinSHteinList<T> extends FrencEinShtein<T> {
         this.size = size + 1;
     }
 
-    protected void InsertMaxNum(Node<T> node) {//avelcnuma averjic sortavorvacic;
+    @Override
+    protected void InsertMaxNum(Node<T> node) {// Insert end sort list
         maxNum.setNextNum(node);
         node.setNumPrev(maxNum);
         maxNum = node;
     }
 
+    @Override
     protected void InsertMinNum(Node<T> node) {//avelacnum a skzbic sortavorvic
         minNum.setNumPrev(node);
         node.setNextNum(minNum);
         minNum = node;
     }
 
-    protected void InsertTruePosition(Node<T> node) {
-        //valeacnum a dnelov chisht tex@ mini u maxi aranq@
+    @Override
+    protected void InsertTruePosition(Node<T> node) {// sorted list in [min-max] position
         Node<T> tmp = minNum;
-        label:
-        while (tmp.getNextNum() != null && (Double.parseDouble(tmp.getValue() + "") < Double.parseDouble(node.getValue() + ""))) {//araj uxarkel tmp vor chisht tex lini
+        label: while (tmp.getNextNum() != null && (Double.parseDouble(tmp.getValue() + "") < Double.parseDouble(node.getValue() + ""))) { // search true poition
             if (Double.parseDouble(tmp.getNextNum().getValue() + "") >= Double.parseDouble(node.getValue() + "")) {
                 break label;
             }
@@ -155,13 +160,15 @@ public class FrencEinSHteinList<T> extends FrencEinShtein<T> {
         tmp.setNextNum(node);
     }
 
-    protected void InsertHelperDoubleLinkedList(Node<T> node) {
+    @Override
+    protected void InsertHelperDoubleLinkedList(Node<T> node) { //
         tail.setNodeNext(node);
         node.setNodePrev(tail);
         tail = node;
     }
 
-    public void Print(boolean quue) {
+    @Override
+    public void Print(boolean quue) { // print DoubleLinedList
         if (size == 0) {
             System.out.println("list is empty");
         } else {
@@ -181,7 +188,8 @@ public class FrencEinSHteinList<T> extends FrencEinShtein<T> {
         }
     }
 
-    public void PrintSort(boolean sort) {
+    @Override
+    public void PrintSort(boolean sort) { // Print Sorted List
         if (sort) {
             Node<T> tmp = minNum;
             while (tmp != null) {
@@ -198,9 +206,9 @@ public class FrencEinSHteinList<T> extends FrencEinShtein<T> {
     }
 
     @Override
-    public void Insert(int index, Node<T> node) {
+    public void Insert(int index, Node<T> node) { // Insert node in index
         if (index < 0 || index > size) {
-            System.out.println("sxal indexov insert");
+            System.out.println("ileag index");
             throw new RuntimeException();
         } else if (index == 0) {
             node.setNodePrev(null);
@@ -228,8 +236,9 @@ public class FrencEinSHteinList<T> extends FrencEinShtein<T> {
         size++;
     }
 
-    public boolean IsEqual(FrencEinSHteinList<T> list) {
-        if (Empty()){
+    @Override
+    public boolean IsEqual(FrencEinSHteinList<T> list) { // compear ForEache elemetn this and list
+        if (Empty()) {
             System.out.println("list is empty");
             throw new RuntimeException();
         }
@@ -251,8 +260,8 @@ public class FrencEinSHteinList<T> extends FrencEinShtein<T> {
     }
 
     @Override
-    public boolean IsNotEqual(FrencEinSHteinList<T> list) {
-        if (Empty()){
+    public boolean IsNotEqual(FrencEinSHteinList<T> list) { // compear ForEache elemetn this and list
+        if (Empty()) {
             System.out.println("list is empty");
             throw new RuntimeException();
         }
@@ -260,8 +269,8 @@ public class FrencEinSHteinList<T> extends FrencEinShtein<T> {
     }
 
     @Override
-    public boolean IsGreatOrNO(FrencEinSHteinList<T> list) {
-        if (Empty()){
+    public boolean IsGreatOrNO(FrencEinSHteinList<T> list) { // compear ForEache elemetn this and list
+        if (Empty()) {
             System.out.println("list is empty");
             throw new RuntimeException();
         }
@@ -269,7 +278,7 @@ public class FrencEinSHteinList<T> extends FrencEinShtein<T> {
             return false;
         } else {
             Node<T> tmp = head;
-            Node<T> tmpList = list.Front();
+            Node<T> tmpList = list.Front();// list head
             while (tmp != null && tmpList != null) {
                 if (Double.parseDouble(tmp.getValue() + "") > Double.parseDouble(tmpList.getValue() + "")) {
                     tmp = tmp.getNodeNext();
@@ -284,8 +293,8 @@ public class FrencEinSHteinList<T> extends FrencEinShtein<T> {
     }
 
     @Override
-    public boolean IsGreatOrEqual(FrencEinSHteinList<T> list) {
-        if (Empty()){
+    public boolean IsGreatOrEqual(FrencEinSHteinList<T> list) {// compear ForEache elemetn this and list
+        if (Empty()) {
             System.out.println("list is empty");
             throw new RuntimeException();
         }
@@ -293,7 +302,7 @@ public class FrencEinSHteinList<T> extends FrencEinShtein<T> {
             return false;
         } else {
             Node<T> tmp = head;
-            Node<T> tmpList = list.Front();
+            Node<T> tmpList = list.Front();//  list head
             while (tmp != null && tmpList != null) {
                 if (Double.parseDouble(tmp.getValue() + "") >= Double.parseDouble(tmpList.getValue() + "")) {
                     tmp = tmp.getNodeNext();
@@ -308,7 +317,7 @@ public class FrencEinSHteinList<T> extends FrencEinShtein<T> {
 
     @Override
     public boolean IsLowOrNo(FrencEinSHteinList<T> list) {
-        if (Empty()){
+        if (Empty()) {
             System.out.println("list is empty");
             throw new RuntimeException();
         }
@@ -316,7 +325,7 @@ public class FrencEinSHteinList<T> extends FrencEinShtein<T> {
             return false;
         } else {
             Node<T> tmp = head;
-            Node<T> tmpList = list.Front();
+            Node<T> tmpList = list.Front();//list head
             while (tmp != null && tmpList != null) {
                 if (Double.parseDouble(tmp.getValue() + "") < Double.parseDouble(tmpList.getValue() + "")) {
                     tmp = tmp.getNodeNext();
@@ -330,8 +339,8 @@ public class FrencEinSHteinList<T> extends FrencEinShtein<T> {
     }
 
     @Override
-    public boolean IsLowOrEqual(FrencEinSHteinList<T> list) {
-        if (Empty()){
+    public boolean IsLowOrEqual(FrencEinSHteinList<T> list) {  // compear ForEache elemetn this and list
+        if (Empty()) {
             System.out.println("list is empty");
             throw new RuntimeException();
         }
@@ -339,7 +348,7 @@ public class FrencEinSHteinList<T> extends FrencEinShtein<T> {
             return false;
         } else {
             Node<T> tmp = head;
-            Node<T> tmpList = list.Front();
+            Node<T> tmpList = list.Front();//list head
             while (tmp != null && tmpList != null) {
                 if (Double.parseDouble(tmp.getValue() + "") <= Double.parseDouble(tmpList.getValue() + "")) {
                     tmp = tmp.getNodeNext();
@@ -354,8 +363,8 @@ public class FrencEinSHteinList<T> extends FrencEinShtein<T> {
 
 
     @Override
-    public FrencEinSHteinList<T> Copy(FrencEinSHteinList<T> list) {
-        if (Empty()){
+    public FrencEinSHteinList<T> Copy(FrencEinSHteinList<T> list) { //C ++ (=) operator
+        if (Empty()) {
             System.out.println("list is empty");
             throw new RuntimeException();
         }
@@ -372,7 +381,7 @@ public class FrencEinSHteinList<T> extends FrencEinShtein<T> {
 
     @Override
     public boolean Erase(int index, int count) {
-        if (Empty()){
+        if (Empty()) {
             System.out.println("list is empty");
             throw new RuntimeException();
         }
@@ -392,7 +401,7 @@ public class FrencEinSHteinList<T> extends FrencEinShtein<T> {
     }
 
     public Node<T> Front() {
-        if (Empty()){
+        if (Empty()) {
             System.out.println("list is empty");
             throw new RuntimeException();
         }
@@ -401,7 +410,7 @@ public class FrencEinSHteinList<T> extends FrencEinShtein<T> {
 
     @Override
     public Node<T> Back() {
-        if (Empty()){
+        if (Empty()) {
             System.out.println("list is empty");
             throw new RuntimeException();
         }
@@ -410,7 +419,7 @@ public class FrencEinSHteinList<T> extends FrencEinShtein<T> {
 
     @Override
     public void PushBack(Node<T> node) {
-        if (Empty()){
+        if (Empty()) {
             System.out.println("list is empty");
             throw new RuntimeException();
         }
@@ -420,7 +429,7 @@ public class FrencEinSHteinList<T> extends FrencEinShtein<T> {
 
     @Override
     public void PushFront(Node<T> node) {
-        if (Empty()){
+        if (Empty()) {
             System.out.println("list is empty");
             throw new RuntimeException();
         }
@@ -428,8 +437,8 @@ public class FrencEinSHteinList<T> extends FrencEinShtein<T> {
     }
 
     @Override
-    public void EmplaceFront(int count) {// count hat noda sarqum  deafult valuyov u skzbic avelacnum;
-        if (Empty()){
+    public void EmplaceFront(int count) {
+        if (Empty()) {
             System.out.println("list is empty");
             throw new RuntimeException();
         }
@@ -451,7 +460,7 @@ public class FrencEinSHteinList<T> extends FrencEinShtein<T> {
 
     @Override
     public void PopBack() {
-        if (Empty()){
+        if (Empty()) {
             System.out.println("list is empty");
             throw new RuntimeException();
         }
@@ -461,7 +470,7 @@ public class FrencEinSHteinList<T> extends FrencEinShtein<T> {
 
     @Override
     public void PopFront() {
-        if (Empty()){
+        if (Empty()) {
             System.out.println("list is empty");
             throw new RuntimeException();
         }
@@ -471,7 +480,7 @@ public class FrencEinSHteinList<T> extends FrencEinShtein<T> {
 
     @Override
     public void ReSize(int count) {// count hat node avelcnuma verjic  nodi valuen deafult valuyov
-        if (Empty()){
+        if (Empty()) {
             System.out.println("list is empty");
             throw new RuntimeException();
         }
@@ -503,11 +512,11 @@ public class FrencEinSHteinList<T> extends FrencEinShtein<T> {
 
     @Override
     public void Swap(FrencEinSHteinList<T> list1, FrencEinSHteinList<T> list2) {
-        if(list1.Empty() ) {
+        if (list1.Empty()) {
             System.out.println("list1 is empty");
             throw new RuntimeException();
         }
-        if (list2.Empty()){
+        if (list2.Empty()) {
             System.out.println("list2 is empty");
             throw new RuntimeException();
         }
@@ -530,11 +539,11 @@ public class FrencEinSHteinList<T> extends FrencEinShtein<T> {
 
     @Override
     public void Reverse() {
-        if(Empty()){
+        if (Empty()) {
             System.out.println("list is empty");
             throw new RuntimeException();
         }
-        if(size==1) {
+        if (size == 1) {
             return;
         }
 
@@ -543,30 +552,29 @@ public class FrencEinSHteinList<T> extends FrencEinShtein<T> {
         tail = tmp;
 
         while (tmp != null) {
-            Node<T> temp = tmp.getNodeNext();
+            Node<T> temForTemp= tmp.getNodeNext();
             tmp.setNodeNext(tmp.getNodePrev());
-            tmp.setNodePrev(temp);
-            tmp = temp;
+            tmp.setNodePrev(temForTemp);
+            tmp = temForTemp;
         }
     }
 
 
     @Override
     public void Unique() {//krknvox elementneric toxuma mi hat;
-       if(Empty()) {
-           System.out.println("list is empty");
-           throw  new RuntimeException();
-       }
-        if(size == 1 ) {
+        if (Empty()) {
+            System.out.println("list is empty");
+            throw new RuntimeException();
+        }
+        if (size == 1) {
             return;
         }
         Node<T> tmp = minNum;
         while (tmp != maxNum.getPrevNum()) {
-            if(tmp.getValue() == tmp.getNextNum().getValue()){
+            if (tmp.getValue() == tmp.getNextNum().getValue()) {
                 tmp = tmp.getNextNum();
                 Remove(tmp.getPrevNum());
-            }
-            else {
+            } else {
                 tmp = tmp.getNextNum();
             }
         }
@@ -574,21 +582,25 @@ public class FrencEinSHteinList<T> extends FrencEinShtein<T> {
     }
 
     @Override
-    public void Sort() {
-        if(Empty()) {
+    public void Sort() { //Double linked listi sortavorum
+        if (Empty()) {
             System.out.println("list is empty");
             throw new RuntimeException();
         }
         Node<T> tmpMinNum = minNum;
-        Node<T> tmpHead = head;
-        while (tmpMinNum != null) {
+         while (tmpMinNum != null)  {
+             tmpMinNum.setNodeNext(tmpMinNum.getNextNum());
+             tmpMinNum.setNodePrev(tmpMinNum.getPrevNum());
+             tmpMinNum =tmpMinNum.getNodeNext();
+         }
+         head =minNum;
+         tail = maxNum;
 
-        }
     }
 
     @Override
     public void Remove(int index) {
-        if(Empty()){
+        if (Empty()) {
             System.out.println("list is emopty");
             throw new RuntimeException();
         }
@@ -662,8 +674,8 @@ public class FrencEinSHteinList<T> extends FrencEinShtein<T> {
         return size == 0;
     }
 
-
-    private void RemoveInSorte(T value) {//Sorti remove aysinq @ts value cucichneri uxum
+    @Override
+    protected void RemoveInSorte(T value) {//Remove Funtion for Sorted list
         Node<T> tmp = null;
         if (minNum.getValue() == value) {
             tmp = minNum;

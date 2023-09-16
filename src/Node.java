@@ -2,8 +2,8 @@ public class Node<T> {
     private T value;
     private Node<T> nodeNext = null;
     private Node<T> nodePrev = null;
-    private Node<T> nextNum = null;
-    private Node<T> prevNum = null;
+    private Node<T> nextNum = null;//with valu next(great)
+    private Node<T> prevNum = null;//with valu prev(low)
 
     public Node ( T value ) {
         this.value = value;

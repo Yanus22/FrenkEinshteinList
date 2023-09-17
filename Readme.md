@@ -78,3 +78,14 @@ License
 This project is licensed under the MIT License - see the LICENSE file for details.
 
 Feel free to customize the README file according to your project's specific details and requirements. Additionally, consider providing examples and usage instructions for the methods if they are not self-explanatory.
+
+
+
+
+
+for run this code need create    Frenceinshtein list and Isert her Node with value for example
+FrencEinSHteinList  list  = new FrencEinSHteinList();
+for(int i = 0 ;i < 5;i++) {
+list.Insert(new Node(i*2));
+}
+ list. and methdo which you wnat call;

@@ -1,4 +1,5 @@
-public class Node<T> {
+public class Node<T> { // this is class for node, structure her,node   have value    for specific value ,and have  4 pointers ,2 two pointer for doubleLinked list for nextNode and PrevNode ,
+    // and  2 poiners for sorted  , one node for graetNode , and lowNode with value
     private T value;
     private Node<T> nodeNext = null;
     private Node<T> nodePrev = null;
@@ -12,6 +13,7 @@ public class Node<T> {
     public Node() {
     }
 
+    // geter and Setter
     public T getValue() {
         return  value;
     }

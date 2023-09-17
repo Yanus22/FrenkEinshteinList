@@ -78,7 +78,7 @@ abstract class FrencEinShtein<T> {
 }
 
 
-public class FrencEinSHteinList<T> extends FrencEinShtein<T> {
+public class FrencEinSHteinList<T> extends FrencEinShtein<T> {   // Extends abstract class for  implementetion  abstract method
     private Node<T> head = new Node<>();
     private Node<T> maxNum = new Node<>();
     private Node<T> minNum = new Node<>();
@@ -103,7 +103,7 @@ public class FrencEinSHteinList<T> extends FrencEinShtein<T> {
     }
 
     @Override
-    protected void InsertHelperForSorted(Node<T> node) {
+    protected void InsertHelperForSorted(Node<T> node) { // helper for sorted   Function
         if (node.getValue() instanceof Number) {
             Double resultCompearMax;
             Double resultCompearMin;
@@ -599,7 +599,7 @@ public class FrencEinSHteinList<T> extends FrencEinShtein<T> {
     }
 
     @Override
-    public void Remove(int index) {
+    public void Remove(int index) { //remove element with Index
         if (Empty()) {
             System.out.println("list is emopty");
             throw new RuntimeException();
@@ -662,7 +662,7 @@ public class FrencEinSHteinList<T> extends FrencEinShtein<T> {
 
 
     @Override
-    public void Clear() {
+    public void Clear() {//Clear List
         while (size != 0) {
             Remove(0);
         }

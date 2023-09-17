@@ -1,6 +1,6 @@
 import java.util.List;
 
-public class Main {
+public class Main {  // this is main class  for run code
     public static void main(String[] args) {
         FrencEinSHteinList<Integer> list = new FrencEinSHteinList<>();
 

@@ -84,8 +84,10 @@ Feel free to customize the README file according to your project's specific deta
 
 
 for run this code need create    Frenceinshtein list and Isert her Node with value for example
-FrencEinSHteinList  list  = new FrencEinSHteinList();
+FrencEinSHteinList  list1  = new FrencEinSHteinList();
+FrencEinSHteinList  list2  = new FrencEinSHteinList();
 for(int i = 0 ;i < 5;i++) {
-list.Insert(new Node(i*2));
+list1.Insert(new Node(i*2));
+list1.Insert(new Node(i*-3));
 }
- list. and methdo which you wnat call;
+ list. and methdo which you wnat call;  but you want call Swap funcktion need creat   FrencEinSHteinList list3 and ten call list3.Swap(list1,list2)
